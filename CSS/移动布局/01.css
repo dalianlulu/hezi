@@ -1,0 +1,278 @@
+  /*先对不同屏幕进行媒体查询 设置html基础的字体大小，全文按照rem设置*/
+    	@media screen and (min-width: 320px) and (max-width: 480px) {
+    		html {
+    			font-size: 90%;
+    		}          
+    	} 
+    	@media screen and (min-width: 481px) and (max-width: 768px) {
+    		html {
+    			font-size: 150%;
+    		}          
+    	} 
+    	@media screen and (min-width: 768px) and (orientation: portrait) {         
+			html {
+				font-size: 200%;
+			}           
+    	}  
+    	@media screen and (min-width: 1024px) and (orientation: landscape) {
+    		html {
+    			font-size: 200%;
+    		}          
+    	} 
+    	@media screen and (min-width: 1025px) {
+    		html {
+    			font-size: 250%;
+    		}          
+    	}   
+    	/*导入箭头，可以用css3画 */
+    	@font-face {font-family: 'iconfont';
+    	    src: url('../task11font/iconfont.eot'); /* IE9*/
+    	    src: url('../task11font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    	    url('../task11font/iconfont.woff') format('woff'), /* chrome、firefox */
+    	    url('../task11font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    	    url('../task11font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+    	}
+    	/*设定整体*/
+		.con {
+			max-width: 100%;
+		}
+		/*头部*/
+		.header {
+			width: 100%;
+			background: #91d4da;
+		}	
+		/*箭头	*/
+		.iconfont {
+			float: left;
+		    font-family:"iconfont" !important;
+		    font-size:1rem;
+		    line-height: 3rem;
+		    font-style:normal;
+		    color: #fff;
+		    margin-left: 1rem;
+		    margin-top: -2px;
+		}
+		.hdBack {
+			font: 1rem/3rem Microsoft YaHei;
+			color: #fff;
+		}
+		.hdTitle {
+			float: right;
+			margin-right: 50%;
+			transform: translateX(50%);
+			font: 1rem/3rem Microsoft YaHei;
+			color: #fff;
+		}
+		/*导航flex兼容性有问题*/
+		.nav {
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+			width: 100%;
+			overflow: hidden;
+		}
+		.nav a {
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			flex: 1;
+			display: block;
+			text-align: center;
+			box-sizing: border-box;
+			text-decoration: none;
+			font: 1rem/3rem Microsoft YaHei;
+			color: #676767;
+		}
+		.nav a.on {
+			border-bottom: 0.3rem solid #90d6d6;
+		}
+		/*图片，因为直接拿来用的，按理应该设置下高度，但是直接撑开图片更好看，实际应该缩放*/
+		.bigImg {
+			max-width: 100%;
+		}
+		/*flex布局*/
+		.tag {
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+			width: 100%;
+			padding: 0.8rem 0.5rem;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		/*居中*/
+		.smImg {
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			flex: 1;
+			display: block;
+			margin: auto;
+		}
+		/*调整图片大小，实际应该在图片应用之前就用PS做好尺寸*/
+		.smImg img {
+			max-width: 50%;
+		}
+		.smImg span{
+			display: block;
+			font: 1rem Microsoft YaHei;
+			text-align: center;
+		}
+		.line {
+			width: 90%;
+			height: 0.1rem ;
+			margin: 0 auto;
+			background: #eee;
+		}
+		/*分栏*/
+		.cols {
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+			width: 100%;
+			padding: 0.8rem 0.5rem;
+			box-sizing: border-box;
+			text-align: center;
+			overflow: hidden;
+		}
+		.col {
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			flex: 1;
+			display: block;
+			border-right: 2px solid #eee;
+		}
+		.col img {
+			max-width: 50%;
+			margin-bottom: 1rem;
+		}
+		.col h1 {
+			font: 1.5rem  Microsoft YaHei;
+		}
+		.col h4 {
+			font: 1.15rem  Microsoft YaHei;
+		}
+		.col:last-child {
+			border-right: none;
+		}
+		.bigLine {
+			width: 100%;
+			height: 1.3rem;
+			background: #eee;
+		}
+		/*文本案例*/
+		.contents {
+			width: 100%;
+			padding: 0 0.5rem;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.contents h1 {
+			float: left;
+			width: 100%;
+			border-bottom: 0.2rem solid #eee;
+			font: 1.5rem/3rem Microsoft YaHei;
+			color: #676767;
+		}
+		.content {
+			float: left;
+			width: 100%;
+			padding-top: 1.5rem;
+			box-sizing: border-box; 
+		}
+		.conImg {
+			float: left;
+			width: 30%;	
+			box-sizing: border-box; 
+		}
+		/*图片未处理，设定高度不会因为改变尺寸导致和文本内容不匹配*/
+		.conImg img {
+			display: block;
+			height: 7rem; 
+			margin: 0 auto 1rem;
+		}
+		.conMain{
+			float: right;
+			width: 70%;
+			box-sizing: border-box; 
+		}
+		.textMain {
+			float: left;
+			width: 45%;
+			margin-bottom: 1rem;
+			margin-left: 5%;
+			background: #eee;
+			color: #fff;
+			text-align: center;
+			font: 1rem/3rem Microsoft YaHei;
+			box-sizing: border-box;
+		}
+		/*文章内容*/
+		.art {
+			position: relative;
+			width: 100%;
+			padding: 0.5rem;
+			border-bottom: 0.2rem solid #eee;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.art img {
+			float: left;
+			width: 35%;
+		}
+		/*标题*/
+		.artMain {
+			float: left;
+			width: 50%;
+			margin-left: 5%;
+			font: 1rem Microsoft YaHei;
+			color: #676767;
+		}
+		/*分钟显示*/
+		.artMain span {
+			display: block;
+			position: absolute;
+			bottom: 0.1rem;
+			font-size: 0.7rem;
+			line-height: 1.5rem;
+			color: #cacaca;
+		}
+		/*三个图片的文章*/
+		.artSp {
+			width: 100%;
+			padding:0 0.5rem;
+			box-sizing: border-box;
+		}
+		.special {
+			float: left;
+			width: 100%;
+			font: 1rem/2rem Microsoft YaHei;
+			color: #676767;
+		}
+		.artSpImg {
+			float: left;
+			width: 32%;
+			margin-right: 2%;
+		}
+		/*最后一个图片的margin-right为0*/
+		.currentImg {
+			margin-right: 0;
+		}
+		.artSp span {
+			display: block;
+			font: 0.7rem/1.5rem  Microsoft YaHei;
+			color: #cacaca;
+		}
+		/*最后的一点颜色*/
+		.foot {
+			width: 100%;
+			height: 5rem;
+			background: #eee;
+		}
